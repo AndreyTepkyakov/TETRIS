@@ -122,7 +122,7 @@ void PlayingField::removeFullLines(int indexLines) {
 	// fill line in the previous line 
 	for (int i = indexLines; i > 1; --i) {
 		for (int j = (width - 2); j > 0; --j) {
-			if (field[(i - 1)* width + j].symbol == 0) {
+			if (field[i * width + j].symbol != 0 || field[(i - 1) * width + j].symbol != 0) {
 				field[i * width + j].symbol = field[(i - 1)* width + j].symbol;
 				field[i * width + j].color = field[(i - 1)* width + j].color;
 			}
